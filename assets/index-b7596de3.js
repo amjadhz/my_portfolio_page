@@ -149,63 +149,132 @@ Forecasted short-term electricity prices using historical market data and extern
 temperature, demand, environmental factors). Built and compared ML models for prediction accuracy. 
 Insights were shared with EnAppSys’ own data science team, who used the results as a starting point 
 for further development.`,tags:["Forecasting","Time Series","Machine Learning","Energy Market","Feature Engineering"]}];function vp(){const e=T.useRef([]);return T.useEffect(()=>{e.current.forEach(t=>{t&&Be.init(t,{max:8,speed:400,scale:1.02})})},[]),L("section",{id:"projects",className:"reveal",children:[m("h2",{style:{marginBottom:".6rem"},children:"Selected Projects"}),m("p",{style:{color:"var(--muted)",margin:0,marginBottom:"1rem"},children:"Data science & automation with real-world impact."}),m("div",{className:"grid",children:gp.map((t,n)=>L("a",{className:"card",href:t.link,target:"_blank",rel:"noreferrer",ref:r=>e.current[n]=r,style:{textDecoration:"none",color:"inherit"},children:[m("h3",{style:{margin:".2rem 0"},children:t.title}),m("p",{style:{color:"var(--muted)",margin:".2rem 0 .6rem",whiteSpace:"pre-line"},children:t.desc}),m("div",{className:"tags",children:t.tags.map(r=>m("span",{className:"tag",children:r},r))})]},t.title))})]})}function yp(){return L("section",{id:"education",className:"reveal",children:[m(wp,{}),m("h2",{style:{marginBottom:".8rem"},children:"Education"}),m("div",{className:"edu",children:[{range:"Sep 2024 – Present",degree:"MSc — Applied Data Science",inst:"Utrecht University",location:"Utrecht, NL",tags:["Supervised ML","Unsupervised ML","Deep Learning","NLP","Causality","Text Analysis","Big Data","Image Analysis","Visualization"],bullets:["Advanced models: supervised & unsupervised learning, deep learning for images and text, and NLP pipelines.","Causality: causal inference frameworks to reason about interventions and measure effects.","Large-scale analysis: text mining, big-data processing and evaluation; visual analytics & clear data storytelling."]},{range:"Sep 2020 – Jul 2024",degree:"BSc — ICT (Data Scientist track)",inst:"HZ University of Applied Sciences",location:"Middelburg, NL",tags:["UX/UI","Designing","Prototyping","Agile","CI/CD","Cloud Computing","Git","JavaScript","TypeScript","SQL","PHP","Business IT Consulting","Software Engineering","Supervised ML","Unsupervised ML"],bullets:["UX/UI, designing & prototyping: user research, wireframes, interactive prototypes, and usability validation.","Software engineering: Agile teamwork, Git workflows, JS/TS, SQL, PHP; requirements → delivery.","DevOps & cloud: built CI/CD pipelines and deployed apps to cloud environments; monitoring and iterations.","Data science foundations: implemented supervised & unsupervised models; data prep, feature engineering, and evaluation.","Business IT consulting: translated stakeholder needs into feasible technical solutions with measurable value."]},{range:"Sep 2022 – Feb 2023",degree:"Minor — Big Data & Design",inst:"HU University of Applied Sciences Utrecht",location:"Utrecht, NL",tags:["Data + UX","Prototyping","Storytelling"],bullets:["Connected data insights with human-centred design; iterated concepts from research to validated prototypes.","Built clear visual narratives and ethical, sustainable design considerations."]},{range:"Sep 2019 – Jun 2020",degree:"ICT — MBO 4",inst:"Scalda",location:"Vlissingen, NL",tags:["Systems","Support","Devices"],bullets:["Installed/configured systems & devices; troubleshooting and customer-oriented support in Dutch/English."]},{range:"Jan 2017 – Jun 2018",degree:"Dutch Language — B1/B2",inst:"Mondo",location:"Vlissingen, NL",tags:["Dutch B1/B2"],bullets:["Intermediate Dutch with focus on speaking, listening and workplace communication."]},{range:"Sep 2012 – Jul 2015",degree:"Agricultural Engineering (undergraduate study)",inst:"Damascus University",location:"Damascus, Syria",tags:["Researching"],bullets:[]},{range:"Sep 2009 – Jun 2012",degree:"Secondary School (HAVO-equivalent)",inst:"Secondary School",location:"Damascus, Syria",tags:[],bullets:["Graduated secondary education with strong math/science focus."]}].map((t,n)=>{var r,i;return L("div",{className:"edu-row",children:[m("div",{className:"edu-time",children:t.range}),m("div",{className:"edu-dot","aria-hidden":"true"}),L("article",{className:"edu-card card",children:[m("h3",{style:{margin:0},children:t.degree}),L("p",{className:"edu-sub",children:[t.inst,t.location?` — ${t.location}`:""]}),((r=t.tags)==null?void 0:r.length)>0&&m("div",{className:"tags",style:{marginTop:".25rem"},children:t.tags.map(l=>m("span",{className:"tag",children:l},l))}),((i=t.bullets)==null?void 0:i.length)>0&&m("ul",{className:"edu-bullets",children:t.bullets.map((l,o)=>m("li",{children:l},o))})]})]},n)})})]})}function wp(){return m("style",{children:`
-      .edu{
-        display:grid; gap:1rem; position:relative;
-        grid-template-columns: 180px 20px 1fr;
-        align-items:start;
+      /* Container just stacks rows */
+      .edu {
+        display: grid;
+        gap: 1rem;
+        position: relative;
       }
-      .edu-row{display:contents}
-      .edu-time{color:var(--muted); font-weight:600; align-self:center}
-      .edu-dot{
-        width:12px;height:12px;border-radius:50%;background:var(--primary);
-        box-shadow:0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
-        justify-self:center; position:relative;
-      }
-      .edu-dot::after{
-        content:""; position:absolute; left:50%; top:12px; bottom:-28px; width:2px;
-        background:var(--border); transform:translateX(-50%);
-      }
-      .edu-card{padding:1rem}
-      .edu-sub{color:var(--muted); margin:.25rem 0 0}
-      .edu-bullets{ margin:.6rem 0 0 0; padding-left:1.1rem; }
-      .edu-bullets li{ margin:.35rem 0 }
-      .edu-bullets li::marker{ color: color-mix(in oklab, var(--primary) 65%, black) }
 
-      @media (max-width: 760px){
-        .edu{grid-template-columns: 1fr; gap:.75rem}
-        .edu-dot{display:none}
-        .edu-time{order:-1}
+      /* Each row is its own grid: date | dot | card */
+      .edu-row {
+        display: grid;
+        grid-template-columns: 180px 20px 1fr;
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .edu-time {
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.3;
+        align-self: center;
+      }
+
+      .edu-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
+        justify-self: center;
+        position: relative;
+      }
+      /* vertical line below each dot (desktop) */
+      .edu-dot::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        bottom: -28px;
+        width: 2px;
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+
+      .edu-card { padding: 1rem; }
+      .edu-sub { color: var(--muted); margin: .25rem 0 0; }
+      .edu-bullets { margin: .6rem 0 0 0; padding-left: 1.1rem; }
+      .edu-bullets li { margin: .35rem 0; }
+      .edu-bullets li::marker { color: color-mix(in oklab, var(--primary) 65%, black); }
+
+      /* Mobile: collapse each row to a single column; put date above the card */
+      @media (max-width: 760px) {
+        .edu-row {
+          grid-template-columns: 1fr;
+          gap: .5rem;
+        }
+        .edu-dot {
+          display: none; /* hide dot & line on mobile for clarity */
+        }
+        .edu-time {
+          margin-bottom: .1rem; /* date sits just above the card */
+        }
       }
     `})}function Sp(){return L("section",{id:"experience",className:"reveal",children:[m(kp,{}),m("h2",{style:{marginBottom:".8rem"},children:"Experience"}),m("div",{className:"xp",children:[{range:"Sep 2019 – Jun 2022",role:"Facilitator",org:"Team Up",location:"Middelburg",tags:["Youth programs","Facilitation"],bullets:["Facilitated weekly group sessions that built routine, play, and social skills for young participants.","Planned activities, adapted to different energy levels, and kept sessions safe and inclusive.","Tracked attendance and session notes; coordinated with other facilitators to improve the program flow."]},{range:"Nov 2020 – Feb 2021",role:"Seller",org:"MediaMarkt",location:"Middelburg",tags:["Retail","Customer service"],bullets:["Advised customers on laptops, phones, accessories, and warranties—matching needs to specs and price.","Handled POS operations, returns, and merchandising; kept the aisle tidy and stocked.","Worked with the team to reach daily sales targets and positive customer feedback."]},{range:"Feb 2022 – Jul 2022",role:"Client Service & Sales",org:"Praxis",location:"Vlissingen",tags:["Retail","Operations"],bullets:["Helped DIY customers find the right materials and tools; explained product differences clearly.","Processed exchanges and deliveries; updated shelf labels and promotional signage.","Collaborated with the warehouse to keep fast-moving items available on the floor."]},{range:"Sep 2022 – Jan 2023",role:"Data Transfarer (Migrated client folders to a new registration system)",org:"SMWO",location:"Goes",tags:["Data entry","Quality checks"],bullets:["Transferred physical and digital client files to a new system with consistent naming and indexing.","Performed quality checks (duplicates, missing fields) and flagged issues to case owners.","Documented the migration steps and helped colleagues learn the new workflow."]},{range:"Feb 2022 – Feb 2024",role:"Cambridge Exam Invigilator",org:"HZ University of Applied Sciences",location:"Vlissingen",tags:["Compliance","Detail-oriented"],bullets:["Prepared exam rooms, checked IDs and materials, and enforced exam regulations.","Monitored timing and incidents, produced reports, and ensured a calm environment.","Coordinated seating, special accommodations, and hand-in procedures with staff."]},{range:"Feb 2023 – Jun 2023",role:"Data Scientist (Internship)",org:"Maxxton",location:"Middelburg",tags:["Python","Scikit-learn","APIs","Supervised & Unsupervised models","Database management"],bullets:["Designed a deduplication pipeline for customer records using string similarity and blocking rules.","Built supervised matching with features (name, address, e-mail patterns) and cross-validation.","Packaged the model behind a Flask API and wrote clear docs and demo notebooks for stakeholders."]},{range:"Feb 2024 – Present",role:"Data Scientist",org:"MR Group (ModuSpec)",location:"Middelburg",tags:["Predictive Maintenance","Supervised & Unsupervised models","Dashboards","Flask"],bullets:["Explored sensor and inspection data; engineered features such as usage cycles and anomaly flags.","Prototyped supervised models (Random Forest, XGBoost) for failure risk and maintenance timing.","Automated data prep and reporting; delivered explainable outputs (feature importance / SHAP) to engineers."]}].map((t,n)=>{var r,i;return L("div",{className:"xp-row",children:[m("div",{className:"xp-time",children:t.range}),m("div",{className:"xp-dot","aria-hidden":"true"}),L("article",{className:"xp-card card",children:[L("h3",{style:{margin:0},children:[t.role," — ",t.org]}),t.location&&m("p",{className:"xp-sub",children:t.location}),((r=t.tags)==null?void 0:r.length)>0&&m("div",{className:"tags",style:{marginTop:".25rem"},children:t.tags.map(l=>m("span",{className:"tag",children:l},l))}),((i=t.bullets)==null?void 0:i.length)>0&&m("ul",{className:"xp-bullets",children:t.bullets.map((l,o)=>m("li",{children:l},o))})]})]},n)})})]})}function kp(){return m("style",{children:`
-      .xp{
-        display:grid; gap:1rem; position:relative;
+      /* Container stacks rows */
+      .xp {
+        display: grid;
+        gap: 1rem;
+        position: relative;
+      }
+
+      /* Each row is its own grid: date | dot | card */
+      .xp-row {
+        display: grid;
         grid-template-columns: 180px 20px 1fr;
-        align-items:start;
+        align-items: start;
+        gap: 1rem;
       }
-      .xp-row{display:contents}
-      .xp-time{color:var(--muted); font-weight:600; align-self:center}
-      .xp-dot{
-        width:12px;height:12px;border-radius:50%;background:var(--primary);
-        box-shadow:0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
-        justify-self:center; position:relative;
-      }
-      .xp-dot::after{
-        content:""; position:absolute; left:50%; top:12px; bottom:-28px; width:2px;
-        background:var(--border); transform:translateX(-50%);
-      }
-      .xp-card{padding:1rem}
-      .xp-sub{color:var(--muted); margin:.25rem 0 0}
 
-      /* detailed bullets */
-      .xp-bullets{
-        margin:.6rem 0 0 0; padding-left:1.1rem; color:var(--text);
+      .xp-time {
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.3;
+        align-self: center;
       }
-      .xp-bullets li{ margin:.35rem 0 }
-      .xp-bullets li::marker{ color: color-mix(in oklab, var(--primary) 65%, black) }
 
-      @media (max-width: 760px){
-        .xp{grid-template-columns: 1fr; gap:.75rem}
-        .xp-dot{display:none}
-        .xp-time{order:-1}
+      .xp-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
+        justify-self: center;
+        position: relative;
+      }
+      /* vertical line (hide after last) */
+      .xp-row:not(:last-child) .xp-dot::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        bottom: -28px;
+        width: 2px;
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+
+      .xp-card { padding: 1rem; }
+      .xp-sub { color: var(--muted); margin: .25rem 0 0; }
+
+      .xp-bullets {
+        margin: .6rem 0 0 0;
+        padding-left: 1.1rem;
+        color: var(--text);
+      }
+      .xp-bullets li { margin: .35rem 0; }
+      .xp-bullets li::marker {
+        color: color-mix(in oklab, var(--primary) 65%, black);
+      }
+
+      /* Mobile: collapse per row, date above the card; hide dot/line */
+      @media (max-width: 760px) {
+        .xp-row {
+          grid-template-columns: 1fr;
+          gap: .5rem;
+        }
+        .xp-dot { display: none; }
+        .xp-time { margin-bottom: .1rem; }
       }
     `})}function xp(){const e={Programming:["Python","JavaScript","TypeScript","R","PHP","SQL","HTML","CSS"],Frameworks:["React","Flask","Laravel","Scikit-learn","Pandas","Streamlit","Svelte"],"ML & Data":["EDA","Model Evaluation","XGBoost","SHAP","NLP","Predictive Analytics"],Tools:["Git","CI/CD","Tableau","Power BI","Excel (advanced)","REST APIs"],"Cloud/DB":["AWS/Azure (basic)","MySQL","SQLite"],Languages:["Arabic (Native)","English (C1)","Dutch (B1)"]},t={supervised:["Classification: Logistic Regression, SVM, Random Forest, XGBoost","Regression: Linear/ElasticNet, Random Forest, XGBRegressor","Model selection & cross-validation (StratifiedKFold, Grid/Random search)","Feature engineering & pipelines (imputation, scaling, encoding)","Model explainability: SHAP, permutation importance, partial dependence"],unsupervised:["Clustering: K-Means, DBSCAN, Agglomerative","Dimensionality reduction: PCA, t-SNE, UMAP","Anomaly/outlier detection: IsolationForest, z-scores","Topic modeling & similarity: LDA, TF-IDF, cosine similarity","Recommendation basics & segmentation"],deep:["Neural Networks with TensorFlow/Keras & PyTorch","CNNs for image classification & feature extraction","RNNs & LSTMs for sequence modeling","Transfer learning with pretrained models (ResNet, BERT)","Hands-on deployment of deep models in lightweight apps"],nlp:["Text preprocessing: tokenization, embeddings, TF-IDF","Sentiment analysis & intent classification","Named Entity Recognition (NER) & sequence labeling","Topic modeling & similarity search","Modern transformer models (BERT, GPT, HuggingFace pipelines)"],ops:["Clean code, version control (Git), and experiment tracking","Data validation, metrics, and reproducible notebooks","Lightweight deployment: Flask/Streamlit dashboards & APIs"]};return L("section",{id:"skills",className:"reveal",children:[m("h2",{style:{marginBottom:".6rem"},children:"Skills"}),m("p",{style:{marginBottom:"1.5rem",color:"var(--muted)"},children:"I combine strong programming foundations with applied machine learning expertise, focusing on building solutions that are not only accurate but also interpretable and practical. My skillset spans end-to-end: from data wrangling and modeling to deployment and communication."}),m("div",{className:"grid",style:{marginBottom:"1rem"},children:Object.entries(e).map(([n,r])=>L("div",{className:"card",children:[m("h3",{style:{marginTop:0},children:n}),m("div",{className:"tags",children:r.map(i=>m("span",{className:"tag",children:i},i))})]},n))}),m("p",{style:{marginBottom:"1rem",color:"var(--muted)"},children:"My strongest area is machine learning and AI, where I specialize in predictive modeling, supervised & unsupervised learning, deep learning, and natural language processing (NLP). I enjoy building explainable, deployable solutions that bridge research and real-world impact."}),L("div",{className:"grid",children:[L("article",{className:"card",children:[m("h3",{style:{marginTop:0},children:"Machine Learning — Supervised"}),m("ul",{style:{margin:".5rem 0 0 1rem"},children:t.supervised.map(n=>m("li",{children:n},n))})]}),L("article",{className:"card",children:[m("h3",{style:{marginTop:0},children:"Machine Learning — Unsupervised"}),m("ul",{style:{margin:".5rem 0 0 1rem"},children:t.unsupervised.map(n=>m("li",{children:n},n))})]}),L("article",{className:"card",children:[m("h3",{style:{marginTop:0},children:"Deep Learning"}),m("ul",{style:{margin:".5rem 0 0 1rem"},children:t.deep.map(n=>m("li",{children:n},n))})]}),L("article",{className:"card",children:[m("h3",{style:{marginTop:0},children:"Natural Language Processing (NLP)"}),m("ul",{style:{margin:".5rem 0 0 1rem"},children:t.nlp.map(n=>m("li",{children:n},n))})]}),L("article",{className:"card",children:[m("h3",{style:{marginTop:0},children:"ML Practice & Delivery"}),m("p",{style:{color:"var(--muted)",marginTop:0},children:"From structured EDA to shipping explainable models and simple web UIs."}),m("ul",{style:{margin:".5rem 0 0 1rem"},children:t.ops.map(n=>m("li",{children:n},n))})]})]})]})}function Ep(){return L("section",{id:"contact",className:"reveal",children:[m("h2",{style:{marginBottom:".6rem"},children:"Contact"}),L("div",{className:"contact-min card",children:[m("p",{className:"contact-tagline",children:"Let’s build something meaningful."}),L("div",{className:"social-row",children:[m("a",{className:"icon-btn",href:"mailto:amjadhwidy@gmail.com","aria-label":"Email Amjad",title:"Email",children:"✉️"}),m("a",{className:"icon-btn",href:"https://www.linkedin.com/in/amjad-hwidy-69793a190/",target:"_blank",rel:"noreferrer","aria-label":"LinkedIn",title:"LinkedIn",children:"in"}),m("a",{className:"icon-btn",href:"https://github.com/amjadhz",target:"_blank",rel:"noreferrer","aria-label":"GitHub",title:"GitHub",children:m("svg",{viewBox:"0 0 24 24","aria-hidden":"true",children:m("path",{fill:"currentColor",d:"M12 2a10 10 0 0 0-3.162 19.487c.5.093.683-.217.683-.483 0-.237-.009-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.621.069-.608.069-.608 1.004.07 1.532 1.03 1.532 1.03.892 1.528 2.341 1.087 2.91.832.092-.646.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.56 9.56 0 0 1 12 6.844c.968.004 1.943.131 2.857.384 1.911-1.295 2.75-1.026 2.75-1.026.544 1.378.201 2.397.099 2.65.64.698 1.028 1.591 1.028 2.682 0 3.842-2.339 4.687-4.566 4.936.359.31.678.92.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.58.69.482A10 10 0 0 0 12 2Z"})})})]}),L("small",{className:"contact-note",children:["Prefer email:"," ",m("a",{href:"mailto:amjadhwidy@gmail.com",children:"amjadhwidy@gmail.com"})]})]})]})}function Cp(){return m("footer",{children:m("div",{className:"container",children:L("small",{children:["© ",new Date().getFullYear()," Amjad. All rights reserved."]})})})}function Np(){return T.useEffect(()=>{const e=new IntersectionObserver(t=>t.forEach(n=>n.isIntersecting&&n.target.classList.add("show")),{threshold:.15});return document.querySelectorAll(".reveal").forEach(t=>e.observe(t)),()=>e.disconnect()},[]),L(ep,{children:[m(np,{}),L("main",{className:"container",children:[m(lp,{}),m(Sp,{}),m(yp,{}),m(vp,{}),m(xp,{}),m(ap,{}),m(pp,{}),m(Ep,{})]}),m(Cp,{})]})}vc(document.getElementById("root")).render(m(Ac.StrictMode,{children:m(Np,{})}));
