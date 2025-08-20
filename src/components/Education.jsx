@@ -126,32 +126,67 @@ export default function Education() {
 function Styles() {
   return (
     <style>{`
-      .edu{
-        display:grid; gap:1rem; position:relative;
-        grid-template-columns: 180px 20px 1fr;
-        align-items:start;
+      /* Container just stacks rows */
+      .edu {
+        display: grid;
+        gap: 1rem;
+        position: relative;
       }
-      .edu-row{display:contents}
-      .edu-time{color:var(--muted); font-weight:600; align-self:center}
-      .edu-dot{
-        width:12px;height:12px;border-radius:50%;background:var(--primary);
-        box-shadow:0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
-        justify-self:center; position:relative;
-      }
-      .edu-dot::after{
-        content:""; position:absolute; left:50%; top:12px; bottom:-28px; width:2px;
-        background:var(--border); transform:translateX(-50%);
-      }
-      .edu-card{padding:1rem}
-      .edu-sub{color:var(--muted); margin:.25rem 0 0}
-      .edu-bullets{ margin:.6rem 0 0 0; padding-left:1.1rem; }
-      .edu-bullets li{ margin:.35rem 0 }
-      .edu-bullets li::marker{ color: color-mix(in oklab, var(--primary) 65%, black) }
 
-      @media (max-width: 760px){
-        .edu{grid-template-columns: 1fr; gap:.75rem}
-        .edu-dot{display:none}
-        .edu-time{order:-1}
+      /* Each row is its own grid: date | dot | card */
+      .edu-row {
+        display: grid;
+        grid-template-columns: 180px 20px 1fr;
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .edu-time {
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.3;
+        align-self: center;
+      }
+
+      .edu-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
+        justify-self: center;
+        position: relative;
+      }
+      /* vertical line below each dot (desktop) */
+      .edu-dot::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        bottom: -28px;
+        width: 2px;
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+
+      .edu-card { padding: 1rem; }
+      .edu-sub { color: var(--muted); margin: .25rem 0 0; }
+      .edu-bullets { margin: .6rem 0 0 0; padding-left: 1.1rem; }
+      .edu-bullets li { margin: .35rem 0; }
+      .edu-bullets li::marker { color: color-mix(in oklab, var(--primary) 65%, black); }
+
+      /* Mobile: collapse each row to a single column; put date above the card */
+      @media (max-width: 760px) {
+        .edu-row {
+          grid-template-columns: 1fr;
+          gap: .5rem;
+        }
+        .edu-dot {
+          display: none; /* hide dot & line on mobile for clarity */
+        }
+        .edu-time {
+          margin-bottom: .1rem; /* date sits just above the card */
+        }
       }
     `}</style>
   );

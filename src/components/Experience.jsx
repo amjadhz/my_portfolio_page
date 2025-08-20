@@ -87,6 +87,7 @@ export default function Experience() {
     }
   ];
 
+  
   return (
     <section id="experience" className="reveal">
       <TimelineStyles />
@@ -101,13 +102,11 @@ export default function Experience() {
               <h3 style={{ margin: 0 }}>
                 {it.role} — {it.org}
               </h3>
-              {it.location && (
-                <p className="xp-sub">{it.location}</p>
-              )}
+              {it.location && <p className="xp-sub">{it.location}</p>}
 
               {it.tags?.length > 0 && (
                 <div className="tags" style={{ marginTop: ".25rem" }}>
-                  {it.tags.map(t => (
+                  {it.tags.map((t) => (
                     <span className="tag" key={t}>{t}</span>
                   ))}
                 </div>
@@ -131,36 +130,70 @@ export default function Experience() {
 function TimelineStyles() {
   return (
     <style>{`
-      .xp{
-        display:grid; gap:1rem; position:relative;
+      /* Container stacks rows */
+      .xp {
+        display: grid;
+        gap: 1rem;
+        position: relative;
+      }
+
+      /* Each row is its own grid: date | dot | card */
+      .xp-row {
+        display: grid;
         grid-template-columns: 180px 20px 1fr;
-        align-items:start;
+        align-items: start;
+        gap: 1rem;
       }
-      .xp-row{display:contents}
-      .xp-time{color:var(--muted); font-weight:600; align-self:center}
-      .xp-dot{
-        width:12px;height:12px;border-radius:50%;background:var(--primary);
-        box-shadow:0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
-        justify-self:center; position:relative;
-      }
-      .xp-dot::after{
-        content:""; position:absolute; left:50%; top:12px; bottom:-28px; width:2px;
-        background:var(--border); transform:translateX(-50%);
-      }
-      .xp-card{padding:1rem}
-      .xp-sub{color:var(--muted); margin:.25rem 0 0}
 
-      /* detailed bullets */
-      .xp-bullets{
-        margin:.6rem 0 0 0; padding-left:1.1rem; color:var(--text);
+      .xp-time {
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.3;
+        align-self: center;
       }
-      .xp-bullets li{ margin:.35rem 0 }
-      .xp-bullets li::marker{ color: color-mix(in oklab, var(--primary) 65%, black) }
 
-      @media (max-width: 760px){
-        .xp{grid-template-columns: 1fr; gap:.75rem}
-        .xp-dot{display:none}
-        .xp-time{order:-1}
+      .xp-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 35%, transparent);
+        justify-self: center;
+        position: relative;
+      }
+      /* vertical line (hide after last) */
+      .xp-row:not(:last-child) .xp-dot::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        bottom: -28px;
+        width: 2px;
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+
+      .xp-card { padding: 1rem; }
+      .xp-sub { color: var(--muted); margin: .25rem 0 0; }
+
+      .xp-bullets {
+        margin: .6rem 0 0 0;
+        padding-left: 1.1rem;
+        color: var(--text);
+      }
+      .xp-bullets li { margin: .35rem 0; }
+      .xp-bullets li::marker {
+        color: color-mix(in oklab, var(--primary) 65%, black);
+      }
+
+      /* Mobile: collapse per row, date above the card; hide dot/line */
+      @media (max-width: 760px) {
+        .xp-row {
+          grid-template-columns: 1fr;
+          gap: .5rem;
+        }
+        .xp-dot { display: none; }
+        .xp-time { margin-bottom: .1rem; }
       }
     `}</style>
   );
