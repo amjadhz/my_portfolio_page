@@ -2,63 +2,15 @@
 export default function Experience() {
   const items = [
     {
-      range: "Sep 2019 – Jun 2022",
-      role: "Facilitator",
-      org: "Team Up",
+      range: "Feb 2024 – Present",
+      role: "Data Scientist",
+      org: "MR Group (ModuSpec)",
       location: "Middelburg",
-      tags: ["Youth programs", "Facilitation"],
+      tags: ["Predictive Maintenance", "Supervised & Unsupervised models", "Dashboards", "Flask"],
       bullets: [
-        "Facilitated weekly group sessions that built routine, play, and social skills for young participants.",
-        "Planned activities, adapted to different energy levels, and kept sessions safe and inclusive.",
-        "Tracked attendance and session notes; coordinated with other facilitators to improve the program flow."
-      ]
-    },
-    {
-      range: "Nov 2020 – Feb 2021",
-      role: "Seller",
-      org: "MediaMarkt",
-      location: "Middelburg",
-      tags: ["Retail", "Customer service"],
-      bullets: [
-        "Advised customers on laptops, phones, accessories, and warranties—matching needs to specs and price.",
-        "Handled POS operations, returns, and merchandising; kept the aisle tidy and stocked.",
-        "Worked with the team to reach daily sales targets and positive customer feedback."
-      ]
-    },
-    {
-      range: "Feb 2022 – Jul 2022",
-      role: "Client Service & Sales",
-      org: "Praxis",
-      location: "Vlissingen",
-      tags: ["Retail", "Operations"],
-      bullets: [
-        "Helped DIY customers find the right materials and tools; explained product differences clearly.",
-        "Processed exchanges and deliveries; updated shelf labels and promotional signage.",
-        "Collaborated with the warehouse to keep fast-moving items available on the floor."
-      ]
-    },
-    {
-      range: "Sep 2022 – Jan 2023",
-      role: "Data Transfarer (Migrated client folders to a new registration system)",
-      org: "SMWO",
-      location: "Goes",
-      tags: ["Data entry", "Quality checks"],
-      bullets: [
-        "Transferred physical and digital client files to a new system with consistent naming and indexing.",
-        "Performed quality checks (duplicates, missing fields) and flagged issues to case owners.",
-        "Documented the migration steps and helped colleagues learn the new workflow."
-      ]
-    },
-    {
-      range: "Feb 2022 – Feb 2024",
-      role: "Cambridge Exam Invigilator",
-      org: "HZ University of Applied Sciences",
-      location: "Vlissingen",
-      tags: ["Compliance", "Detail-oriented"],
-      bullets: [
-        "Prepared exam rooms, checked IDs and materials, and enforced exam regulations.",
-        "Monitored timing and incidents, produced reports, and ensured a calm environment.",
-        "Coordinated seating, special accommodations, and hand-in procedures with staff."
+        "Explored sensor and inspection data; engineered features such as usage cycles and anomaly flags.",
+        "Prototyped supervised models (Random Forest, XGBoost) for failure risk and maintenance timing.",
+        "Automated data prep and reporting; delivered explainable outputs (feature importance / SHAP) to engineers."
       ]
     },
     {
@@ -74,15 +26,63 @@ export default function Experience() {
       ]
     },
     {
-      range: "Feb 2024 – Present",
-      role: "Data Scientist",
-      org: "MR Group (ModuSpec)",
-      location: "Middelburg",
-      tags: ["Predictive Maintenance", "Supervised & Unsupervised models", "Dashboards", "Flask"],
+      range: "Feb 2022 – Feb 2024",
+      role: "Cambridge Exam Invigilator",
+      org: "HZ University of Applied Sciences",
+      location: "Vlissingen",
+      tags: ["Compliance", "Detail-oriented"],
       bullets: [
-        "Explored sensor and inspection data; engineered features such as usage cycles and anomaly flags.",
-        "Prototyped supervised models (Random Forest, XGBoost) for failure risk and maintenance timing.",
-        "Automated data prep and reporting; delivered explainable outputs (feature importance / SHAP) to engineers."
+        "Prepared exam rooms, checked IDs and materials, and enforced exam regulations.",
+        "Monitored timing and incidents, produced reports, and ensured a calm environment.",
+        "Coordinated seating, special accommodations, and hand-in procedures with staff."
+      ]
+    },
+    {
+      range: "Sep 2022 – Jan 2023",
+      role: "Data Transfarer (Migrated client folders to a new registration system)",
+      org: "SMWO",
+      location: "Goes",
+      tags: ["Data entry", "Quality checks"],
+      bullets: [
+        "Transferred physical and digital client files to a new system with consistent naming and indexing.",
+        "Performed quality checks (duplicates, missing fields) and flagged issues to case owners.",
+        "Documented the migration steps and helped colleagues learn the new workflow."
+      ]
+    },
+    {
+      range: "Feb 2022 – Jul 2022",
+      role: "Client Service & Sales",
+      org: "Praxis",
+      location: "Vlissingen",
+      tags: ["Retail", "Operations"],
+      bullets: [
+        "Helped DIY customers find the right materials and tools; explained product differences clearly.",
+        "Processed exchanges and deliveries; updated shelf labels and promotional signage.",
+        "Collaborated with the warehouse to keep fast-moving items available on the floor."
+      ]
+    },
+    {
+      range: "Nov 2020 – Feb 2021",
+      role: "Seller",
+      org: "MediaMarkt",
+      location: "Middelburg",
+      tags: ["Retail", "Customer service"],
+      bullets: [
+        "Advised customers on laptops, phones, accessories, and warranties—matching needs to specs and price.",
+        "Handled POS operations, returns, and merchandising; kept the aisle tidy and stocked.",
+        "Worked with the team to reach daily sales targets and positive customer feedback."
+      ]
+    },
+    {
+      range: "Sep 2019 – Jun 2022",
+      role: "Facilitator",
+      org: "Team Up",
+      location: "Middelburg",
+      tags: ["Youth programs", "Facilitation"],
+      bullets: [
+        "Facilitated weekly group sessions that built routine, play, and social skills for young participants.",
+        "Planned activities, adapted to different energy levels, and kept sessions safe and inclusive.",
+        "Tracked attendance and session notes; coordinated with other facilitators to improve the program flow."
       ]
     }
   ];
