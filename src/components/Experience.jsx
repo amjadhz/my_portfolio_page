@@ -2,7 +2,7 @@
 export default function Experience() {
   const items = [
     {
-      range: "Feb 2024 – Present",
+      range: "Feb 2024 – Sep 2025",
       role: "Data Scientist",
       org: "MR Group (ModuSpec)",
       location: "Middelburg",
