@@ -3,7 +3,7 @@ export default function Education() {
   // ✏️ Replace the placeholder items with your real education data
   const items = [
   {
-    range: "Sep 2024 – Present",
+    range: "Sep 2024 – Nov 2025",
     degree: "MSc — Applied Data Science",
     inst: "Utrecht University",
     location: "Utrecht, NL",

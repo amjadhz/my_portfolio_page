@@ -75,12 +75,16 @@ export default function Hero() {
       <div className="hero-card">
         <h1 style={{ color: theme.primary }}>Hi, I’m Amjad Hwidy</h1>
         <p>
-          I’m a <strong>Data Scientist & Analyst</strong> passionate about unlocking the value of data through 
-          <strong> machine learning, AI, and explainable models</strong>. My projects range from 
-          <strong> ICU admission prediction</strong> and <strong>ethical recommender systems </strong> 
-          to <strong>automation tools in industry</strong>, all with a focus on transparency, fairness, and real-world impact.  
-          I thrive on turning complex datasets into actionable insights, and my long-term vision is to build 
-          AI solutions that are not only powerful, but also <strong>ethical, user-centered, and trustworthy</strong>.
+          I’m a <strong>Data Scientist & Analyst</strong> with a Master’s degree in <strong>Applied Data Science</strong>, 
+          passionate about unlocking the value of data through 
+          <strong>machine learning, AI, and explainable models</strong>. 
+          My work spans projects such as <strong>ICU admission prediction</strong>, 
+          <strong>ethical recommender systems</strong>, and 
+          <strong>industrial automation tools</strong>, all grounded in real-world deployment.  
+          I place strong emphasis on <strong>transparency, fairness, and interpretability</strong>, 
+          and thrive on turning complex datasets into actionable insights. 
+          My long-term vision is to build AI solutions that are not only powerful, but also 
+          <strong>ethical, user-centered, and trustworthy</strong>.
         </p>
 
         <div>
