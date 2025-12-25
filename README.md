@@ -78,3 +78,14 @@ You may read and learn from the code. To use the design as your own site, please
 **Micro-interactions: custom particles, tilt, and scroll-reveal (no heavy libraries).**
 
 **Thanks to colleagues and friends who gave feedback on design and readability.**
+
+
+```
+npm install
+npm run build
+
+git add .
+git commit -m "Setup GitHub Pages deploy"
+git push origin main
+
+```
